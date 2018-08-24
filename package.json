@@ -1,0 +1,10 @@
+{
+  "name": "test_project",
+  "version": "0.0.1",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "fs-extra": "^7.0.0"
+  }
+}
