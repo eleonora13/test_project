@@ -11,20 +11,23 @@ describe('Check Web Elements', function() {
         try {
             async function elementDisplayed(testElement, timeout) {
                 let internalTimer = 500;
+                let elementIsPresent = await testElement.isPresent();
 
-                while (await !testElement.isPresent() || await !testElement.isDisplayed()) {
+                while (!elementIsPresent) {
+                    console.log(timeout);
                     if (!timeout) {
                         throw new ElementNotFoundException('Element not found');
                     } else {
                         await browser.sleep(internalTimer);
                         timeout -= internalTimer;
+                        elementIsPresent = await testElement.isPresent();
                     }
                 }
 
                 return true;
             }
 
-            let searchField = await element(By.css('#orb-search-q'));
+            let searchField = await element(By.css('#orb-search-q12'));
             const result = await elementDisplayed(searchField, 10000);
             console.log(result);
 
