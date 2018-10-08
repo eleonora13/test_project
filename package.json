@@ -2,7 +2,13 @@
   "name": "test_project",
   "version": "0.0.1",
   "dependencies": {
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "iedriver": "^3.9.2",
+    "jasmine-reporters": "^2.3.2",
+    "mocha": "^5.2.0",
+    "protractor": "^5.4.1",
+    "selenium-webdriver": "^3.6.0",
+    "test": "^0.6.0"
   },
   "devDependencies": {
     "fs-extra": "^7.0.0"
