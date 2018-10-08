@@ -14,7 +14,6 @@ describe('Check Web Elements', function() {
                 let elementIsPresent = await testElement.isPresent();
 
                 while (!elementIsPresent) {
-                    console.log(timeout);
                     if (!timeout) {
                         throw new ElementNotFoundException('Element not found');
                     } else {
@@ -24,10 +23,23 @@ describe('Check Web Elements', function() {
                     }
                 }
 
+                let elementIsDisplayed = await testElement.isDisplayed();
+
+                while (!elementIsDisplayed) {
+                    if (!timeout) {
+                        throw new ElementNotFoundException('Element not found');
+                    } else {
+                        await browser.sleep(internalTimer);
+                        timeout -= internalTimer;
+                        elementIsDisplayed = await testElement.isDisplayed();
+                    }
+
+                }
+
                 return true;
             }
 
-            let searchField = await element(By.css('#orb-search-q12'));
+            let searchField = await element(By.css('#orb-search-q3434'));
             const result = await elementDisplayed(searchField, 10000);
             console.log(result);
 
