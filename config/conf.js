@@ -1,6 +1,6 @@
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['../js/implicit_wait.js'],
+    specs: ['../js/bbc.js'],
     framework: 'jasmine',
     jasmineNodeOpts: {
         showColors: true,
