@@ -11,6 +11,8 @@
     "test": "^0.6.0"
   },
   "devDependencies": {
-    "fs-extra": "^7.0.0"
+    "eslint-plugin-jasmine": "^2.10.1",
+    "fs-extra": "^7.0.0",
+    "jasmine-expect": "^3.8.4"
   }
 }
