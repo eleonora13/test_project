@@ -1,7 +1,9 @@
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    // specs: ['../js/bbc.js', '../js/assertions.js'],
-    specs: ['../js/assertions.js'],
+    suites: {
+        assertions: '../js/suites/assertions/*spec.js',
+        bbc: '../js/suites/bbc/*spec.js'
+    },
     framework: 'jasmine',
     jasmineNodeOpts: {
         showColors: true,

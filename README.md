@@ -12,4 +12,4 @@
 1. First of all run the command: `webdriver-manager start`;
 2. Open the new tab in Terminal;
 3. Go to the config folder via the `cd config` command;
-4. Run the `protractor conf` command to run the _assertions_ script 
+4. Run the `protractor conf` command to run the _assertions_ script

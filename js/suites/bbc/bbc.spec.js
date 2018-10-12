@@ -1,6 +1,6 @@
-const ExplicitWait = require('../config/ExplicitWait');
+const ExplicitWait = require('../../../config/ExplicitWait');
 
-const URL = require('../config/URL');
+const URL = require('../../../config/URL');
 
 
 describe('Check Web Elements', function() {
