@@ -1,4 +1,4 @@
-const ExplicitWait = require('../../../config/ExplicitWait');
+const ExplicitWait = require('../../../pageObject/ExplicitWait');
 
 const URL = require('../../../config/URL');
 
