@@ -1,29 +1,28 @@
-const MoreContent = require('../../../pageObject/yandexMoreContent');
+const YandexMoreContent = require('../../../pageObject/Yandex/YandexMoreContent');
+
+const YandexSetCountry = require('../../../pageObject/Yandex/YandexSetCountry');
 
 const URL = require('../../../config/URL');
 
-const Singleton = require('../../../pattern/singleton');
-
-
 describe('check the content of more element', function() {
     it('More content should be the same for London and Paris', async () => {
-        const instance = new Singleton();
-        await instance.waitForAngularEnabled(false);
-        await instance.get(URL.yandex);
-        try {
 
-            const moreContent = new MoreContent();
+        await browser.waitForAngularEnabled(false);
+        await browser.get(URL.yandex);
 
-            await moreContent.setCity('Лондон');
-            let contentLondon = await moreContent.checkMoreContent();
+        const yandexMoreContent = new YandexMoreContent();
+        const yandexSetCountry = new YandexSetCountry;
 
-            await moreContent.setCity('Paris');
-            let contentParis = await moreContent.checkMoreContent();
+        await yandexMoreContent.goSettings();
+        await yandexSetCountry.setCity('Лондон');
+        await yandexMoreContent.showMore();
+        let contentLondon = await yandexMoreContent.checkMoreContent();
 
-            expect(contentLondon).toEqual(contentParis);
+        await yandexMoreContent.goSettings();
+        await yandexSetCountry.setCity('Paris');
+        await yandexMoreContent.showMore();
+        let contentParis = await yandexMoreContent.checkMoreContent();
 
-        } catch(e) {
-            console.log(e);
-        }
+        expect(contentLondon).toEqual(contentParis);
     });
 });
