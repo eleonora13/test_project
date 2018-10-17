@@ -6,23 +6,13 @@ describe('check the functionality on the page', function() {
         await browser.get(URL.yandex_market);
 
         let yandexMarket = new YandexMarket();
+
         await yandexMarket.checkCheckbox();
-        browser.sleep(3000);
-
         await yandexMarket.uncheckCheckbox();
-        browser.sleep(3000);
-
         await yandexMarket.setRadioButton();
-        browser.sleep(3000);
-
         await yandexMarket.selectDropDown();
-        browser.sleep(3000);
-
         await yandexMarket.scrollPage();
-        browser.sleep(2000);
-
         await yandexMarket.fillPrice();
-        browser.sleep(2000);
 
         let valueAttr = await yandexMarket.getAttributePrice('value');
         let classAttr = await yandexMarket.getAttributePrice('class');
