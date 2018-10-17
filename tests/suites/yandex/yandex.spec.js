@@ -1,6 +1,6 @@
-const YandexMoreContent = require('../../../pageObject/Yandex/YandexMoreContent');
+const YandexMoreContent = require('../../../pageObject/yandex/YandexMoreContent');
 
-const YandexSetCountry = require('../../../pageObject/Yandex/YandexSetCountry');
+const YandexSetCountry = require('../../../pageObject/yandex/YandexSetCountry');
 
 const URL = require('../../../config/URL');
 

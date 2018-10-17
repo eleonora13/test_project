@@ -1,6 +1,6 @@
 let until = protractor.ExpectedConditions;
 
-const helpers = {
+export const helpers = {
     waitElementPresence: async function (locator) {
         await browser.wait(until.presenceOf(element(locator)), 5000);
     },
@@ -11,8 +11,14 @@ const helpers = {
 
     waitElementVisible: async function (locator) {
         await browser.wait(until.visibilityOf(element(locator)), 5000);
-    }
+    },
 
+    waitElementSelected: async function (locator) {
+        await browser.wait(until.elementIsSelected(element(locator)), 5000);
+    },
+
+    waitElementNotSelected: async function (locator) {
+        await browser.wait(until.elementIsNotSelected(element(locator)), 5000);
+    }
 };
 
-module.exports = helpers;

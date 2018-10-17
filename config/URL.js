@@ -1,7 +1,8 @@
 //Urls for test scripts
 
-module.exports = {
+export const URL = {
     bbc: 'http://www.bbc.com/',
-    yandex: 'https://yandex.by/'
+    yandex: 'https://yandex.by/',
+    yandex_market: 'https://market.yandex.by/catalog/54726/list?local-offers-first=0&onstock=1&qrfrom=3'
 };
 

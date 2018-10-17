@@ -1,4 +1,5 @@
 const helper = require('../../helpers/helper_yandex');
+
 class YandexMoreContent {
 
     async goSettings() {
