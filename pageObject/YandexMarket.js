@@ -35,7 +35,7 @@ export class YandexMarket {
         await element.all(by.css('div._16hsbhrgAf li._3E2Wzu8o3H:nth-of-type(1) input')).get(0).sendKeys('100');
     }
 
-    async getAttributePrice (attribute) {
+    async getAttributePrice(attribute) {
         return await element.all(by.css('div._16hsbhrgAf li._3E2Wzu8o3H:nth-of-type(1) input')).get(0).getAttribute(attribute);
     }
 }
