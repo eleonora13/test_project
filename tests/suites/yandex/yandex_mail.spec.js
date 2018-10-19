@@ -4,7 +4,6 @@ import { YandexHome } from '../../../pageObject/yandex_mail/YandexHome';
 import { YandexMail} from "../../../pageObject/yandex_mail/YandexMail";
 import { loginCredentials } from '../../../config/defaultCfg';
 
-
 describe('verify yandex mail login/logout functionality', function() {
 
     let yandexLogin = new YandexLogin();
@@ -51,7 +50,6 @@ describe('verify yandex mail login/logout functionality', function() {
     });
 
     it('check the language change', async() => {
-        // browser.navigate().back();
         let expectedLanguage = await yandexHome.setLanguage();
         let actualLanguage = await yandexHome.getChangedLanguage();
         expect(expectedLanguage).to.equal(actualLanguage);
