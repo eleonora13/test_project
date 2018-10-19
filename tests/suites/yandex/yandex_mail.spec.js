@@ -31,7 +31,7 @@ describe('verify yandex mail login/logout functionality', function() {
         await yandexLogin.logIn(loginCredentials.login, loginCredentials.notValidPass);
         let passErrorText = await yandexLogin.checkNotValidPassError(by.css('div.passport-Domik-Form-Error_active'));
         expect(passErrorText).to.equal(loginCredentials.validationPassError);
-        });
+    });
 
     it('user should not be able to login with not valid login', async() => {
         await yandexLogin.backToHomePage();
@@ -45,7 +45,6 @@ describe('verify yandex mail login/logout functionality', function() {
     it('check navigation to yandex Video, Images, News, Maps, Market, Translator, Music', async() => {
         await yandexLogin.backToHomePage();
         let tabList = await yandexHome.getTabs();
-
         await yandexHome.checkTab(tabList, URL.yandex_tabs);
     });
 
