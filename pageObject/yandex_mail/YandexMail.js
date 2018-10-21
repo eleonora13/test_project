@@ -1,15 +1,23 @@
 import {helpers} from "../../helpers/helper_yandex";
 
 export class YandexMail {
-    async getUserName(username) {
-        helpers.waitElementVisible(username);
-        return await element(username).getText();
+
+    constructor() {
+        this.userName = element(by.css('div.mail-User-Name'));
+        this.userImage = element(by.css('#recipient-1'));
+        this.userDropDown = element(by.css('#nb-4'));
+        this.userDropDownOptions = element.all(by.css('#nb-4 div.b-user-dropdown-content a'));
+    }
+
+    async getUserName() {
+        helpers.waitElementVisible(this.userName);
+        return await this.userName.getText();
     }
 
     async logOut() {
-        helpers.waitElementVisible(by.css('#recipient-1'));
-        await element(by.css('#recipient-1')).click();
-        helpers.waitElementVisible(by.css('#nb-4'));
-        await element.all(by.css('#nb-4 div.b-user-dropdown-content a')).get(4).click();
+        helpers.waitElementVisible(this.userImage);
+        await this.userImage.click();
+        helpers.waitElementVisible(this.userDropDown);
+        await this.userDropDownOptions.get(4).click();
     }
 }

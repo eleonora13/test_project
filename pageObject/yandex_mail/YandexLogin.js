@@ -1,33 +1,41 @@
-import { helpers } from '../../helpers/helper_yandex';
+import {helpers} from '../../helpers/helper_yandex';
 
 export class YandexLogin {
+    constructor() {
+        this.loginField = element(by.css('div.passport-Domik-Content div.passport-Domik-Form-Field:nth-of-type(1) input.passport-Input-Controller'));
+        this.passField = element(by.css('div.passport-Domik-Content div.passport-Domik-Form-Field:nth-of-type(2) input.passport-Input-Controller'));
+        this.loginButton = element(by.css('span.passport-Button-Text'));
+        this.changeAccountButton = element(by.css('span.passport-Domik-Account-Item a'));
+        this.validationErrorMessage = element(by.css('div.passport-Domik-Form-Error_active'));
+        this.backToHomeButton = element(by.css('div.passport-Domik-Retpath a'));
+    }
 
     async logIn(login, pass) {
-        helpers.waitElementClickable(by.css('div.passport-Domik-Content div.passport-Domik-Form-Field:nth-of-type(1) input.passport-Input-Controller'));
-        await element(by.css('div.passport-Domik-Content div.passport-Domik-Form-Field:nth-of-type(1) input.passport-Input-Controller')).sendKeys(login);
-        helpers.waitElementClickable(by.css('div.passport-Domik-Content div.passport-Domik-Form-Field:nth-of-type(2) input.passport-Input-Controller'));
-        await element(by.css('div.passport-Domik-Content div.passport-Domik-Form-Field:nth-of-type(2) input.passport-Input-Controller')).sendKeys(pass);
-        helpers.waitElementClickable(by.css('span.passport-Button-Text'));
-        await element(by.css('span.passport-Button-Text')).click();
+        helpers.waitElementClickable(this.loginField);
+        await this.loginField.sendKeys(login);
+        helpers.waitElementClickable(this.passField);
+        await this.passField.sendKeys(pass);
+        helpers.waitElementClickable(this.loginButton);
+        await this.loginButton.click();
     }
 
     async changeAccount() {
-        helpers.waitElementVisible(by.css('span.passport-Domik-Account-Item'));
-        await element(by.css('span.passport-Domik-Account-Item a')).click();
+        helpers.waitElementVisible(this.changeAccountButton);
+        await this.changeAccountButton.click();
     }
 
-    async checkNotValidPassError (errorText) {
-        helpers.waitElementVisible(by.css('div.passport-Domik-Form-Error_active'));
-        return await element(errorText).getText();
+    async checkNotValidPassError() {
+        helpers.waitElementVisible(this.validationErrorMessage);
+        return await this.validationErrorMessage.getText();
     }
 
     async backToHomePage() {
-        helpers.waitElementClickable('div.passport-Domik-Retpath a');
-        await element(by.css('div.passport-Domik-Retpath a')).click();
+        helpers.waitElementClickable(this.backToHomeButton);
+        await this.backToHomeButton.click();
     }
 
-    async checkNotValidLoginError (errorText) {
-        helpers.waitElementVisible(by.css('div.passport-Domik-Form-Error_active'));
-        return await element(errorText).getText();
+    async checkNotValidLoginError() {
+        helpers.waitElementVisible(this.validationErrorMessage);
+        return await this.validationErrorMessage.getText();
     }
 }
