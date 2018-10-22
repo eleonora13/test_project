@@ -11,31 +11,31 @@ export class YandexLogin {
     }
 
     async logIn(login, pass) {
-        helpers.waitElementClickable(this.loginField);
+        await helpers.waitElementClickable(this.loginField);
         await this.loginField.sendKeys(login);
-        helpers.waitElementClickable(this.passField);
+        await helpers.waitElementClickable(this.passField);
         await this.passField.sendKeys(pass);
-        helpers.waitElementClickable(this.loginButton);
+        await helpers.waitElementClickable(this.loginButton);
         await this.loginButton.click();
     }
 
     async changeAccount() {
-        helpers.waitElementVisible(this.changeAccountButton);
+        await helpers.waitElementVisible(this.changeAccountButton);
         await this.changeAccountButton.click();
     }
 
-    async checkNotValidPassError() {
-        helpers.waitElementVisible(this.validationErrorMessage);
+    async getNotValidPassError() {
+        await helpers.waitElementVisible(this.validationErrorMessage);
         return await this.validationErrorMessage.getText();
     }
 
     async backToHomePage() {
-        helpers.waitElementClickable(this.backToHomeButton);
+        await helpers.waitElementClickable(this.backToHomeButton);
         await this.backToHomeButton.click();
     }
 
-    async checkNotValidLoginError() {
-        helpers.waitElementVisible(this.validationErrorMessage);
+    async getNotValidLoginError() {
+        await helpers.waitElementVisible(this.validationErrorMessage);
         return await this.validationErrorMessage.getText();
     }
 }

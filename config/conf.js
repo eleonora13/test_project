@@ -14,6 +14,7 @@ exports.config = {
         showColors: true,
         defaultTimeoutInterval: 500000
     },
+    reporters: ['allure'],
     onPrepare: function () {
         browser.ignoreSynchronization = true;
         let chai, chaiAsPromised;
@@ -30,6 +31,11 @@ exports.config = {
         global.chai = chai;
         global.expect = chai.expect;
         global.assert = chai.assert;
+
+        const AllureReporter = require('jasmine-allure-reporter');
+        jasmine.getEnv().addReporter(new AllureReporter({
+            resultsDir: 'C:\\Users\\Elia\\Desktop\\test_project\\allure-results'
+        }));
     },
     multiCapabilities: [
         {

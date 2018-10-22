@@ -30,3 +30,10 @@
 2. Open the new tab in Terminal;
 3. Go to the config folder via the `cd config` command;
 4. Run the `protractor conf --suite yandex_mail` command to run the _yandex_mail.spec_ script
+
+**To generate _Allure report_ you need:**
+1. First of all run the command: `webdriver-manager start`;
+2. Open the new tab in Terminal;
+3. Run the `npm test` command;
+4. Run the `allure open allure-report` command to open the generated report.
+

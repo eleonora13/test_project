@@ -10,14 +10,14 @@ export class YandexMail {
     }
 
     async getUserName() {
-        helpers.waitElementVisible(this.userName);
+        await helpers.waitElementVisible(this.userName);
         return await this.userName.getText();
     }
 
     async logOut() {
-        helpers.waitElementVisible(this.userImage);
+        await helpers.waitElementVisible(this.userImage);
         await this.userImage.click();
-        helpers.waitElementVisible(this.userDropDown);
+        await helpers.waitElementVisible(this.userDropDown);
         await this.userDropDownOptions.get(4).click();
     }
 }

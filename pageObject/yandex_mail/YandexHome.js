@@ -15,23 +15,23 @@ export class YandexHome {
     }
 
     async goToLogin() {
-        helpers.waitElementVisible(this.goToMailButton);
+        await helpers.waitElementVisible(this.goToMailButton);
         await this.goToMailButton.click();
     }
 
     async checkLogout() {
-        helpers.waitElementVisible(this.goToMailButtonText);
+        await helpers.waitElementVisible(this.goToMailButtonText);
         return await this.goToMailButtonText.getText();
     }
 
     async getTabs() {
-        helpers.waitElementVisible(this.homeTabsBlock);
+        await helpers.waitElementVisible(this.homeTabsBlock);
         return await this.homeTabs.getText();
     }
 
     async checkTab(tabs, expectedUrl) {
         for (let i = 0; i < tabs.length; i++) {
-            helpers.waitElementVisible(element(by.linkText(tabs[i])));
+            await helpers.waitElementVisible(element(by.linkText(tabs[i])));
             await element(by.linkText(tabs[i])).click();
             let currentUrl = await browser.getCurrentUrl();
             expect(currentUrl).to.contain(expectedUrl[i]);
@@ -40,16 +40,16 @@ export class YandexHome {
     }
 
     async getLanguage() {
-        helpers.waitElementVisible(this.languageButton);
+        await helpers.waitElementVisible(this.languageButton);
         await this.languageButton.click();
-        helpers.waitElementVisible(this.languageDropDown);
+        await helpers.waitElementVisible(this.languageDropDown);
         let languageText = await this.activeLanguageText.getText();
         await this.activeLanguage.click();
         return languageText;
     }
 
     async getChangedLanguage() {
-        helpers.waitElementVisible(this.languageButton);
+        await helpers.waitElementVisible(this.languageButton);
         return await this.actualLanguageText.getText();
     }
 
