@@ -15,6 +15,11 @@ exports.config = {
         defaultTimeoutInterval: 500000
     },
     reporters: ['allure'],
+    reporterOptions: {
+        allure: {
+            outputDir: 'allure-results'
+        }
+    },
     onPrepare: function () {
         browser.ignoreSynchronization = true;
         let chai, chaiAsPromised;
