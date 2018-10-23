@@ -1,8 +1,7 @@
 require('babel-core/register');
 
 exports.config = {
-    seleniumServerJar: './node_modules/protractor/selenium/selenium-server-standalone-2.41.0.jar',
-    baseUrl: 'http://localhost:9000/',
+    seleniumAddress: 'http://localhost:4444/wd/hub',
     suites: {
         assertions: '../tests/suites/assertions/*spec.js',
         bbc: '../tests/suites/bbc/*spec.js',
