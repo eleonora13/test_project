@@ -12,7 +12,7 @@ exports.config = {
     framework: 'jasmine',
     jasmineNodeOpts: {
         showColors: true,
-        defaultTimeoutInterval: 500000
+        defaultTimeoutInterval: 5000
     },
     reporters: ['allure'],
     onPrepare: function () {
