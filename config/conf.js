@@ -7,7 +7,9 @@ exports.config = {
         bbc: '../tests/suites/bbc/*spec.js',
         yandex: '../tests/suites/yandex/yandex.spec.js',
         yandex_market: '../tests/suites/yandex/yandex_market.spec.js',
-        yandex_mail: '../tests/suites/yandex/yandex_mail.spec.js'
+        yandex_mail: '../tests/suites/yandex/yandex_mail.spec.js',
+        actions: '../tests/suites/actions/actions.spec.js',
+        row_js: '../tests/suites/js_executor/js_executor.spec.js'
     },
     framework: 'jasmine',
     jasmineNodeOpts: {
@@ -15,11 +17,6 @@ exports.config = {
         defaultTimeoutInterval: 500000
     },
     reporters: ['allure'],
-    reporterOptions: {
-        allure: {
-            outputDir: 'allure-results'
-        }
-    },
     onPrepare: function () {
         browser.ignoreSynchronization = true;
         let chai, chaiAsPromised;

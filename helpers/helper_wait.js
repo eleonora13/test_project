@@ -1,4 +1,4 @@
-let until = protractor.ExpectedConditions;
+const until = protractor.ExpectedConditions;
 
 export const helpers = {
     waitElementPresence: async function (element) {
@@ -19,6 +19,10 @@ export const helpers = {
 
     waitElementNotSelected: async function (element) {
         await browser.wait(until.elementIsNotSelected(element), 10000);
+    },
+
+    waitTextToBePresentInElement: async function (element, text) {
+        await browser.wait(until.textToBePresentInElement(element, text), 10000);
     }
 };
 

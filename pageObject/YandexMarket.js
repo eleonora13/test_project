@@ -1,4 +1,4 @@
-import { helpers } from '../helpers/helper_yandex';
+import { helpers } from '../helpers/helper_wait';
 
 export class YandexMarket {
 

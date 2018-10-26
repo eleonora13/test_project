@@ -1,4 +1,4 @@
-const helper = require('../../helpers/helper_yandex');
+const helper = require('../../helpers/helper_wait');
 
 class YandexMoreContent {
 
