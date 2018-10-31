@@ -9,7 +9,8 @@ exports.config = {
         yandex_market: '../tests/suites/yandex/yandex_market.spec.js',
         yandex_mail: '../tests/suites/yandex/yandex_mail.spec.js',
         actions: '../tests/suites/actions/actions.spec.js',
-        row_js: '../tests/suites/js_executor/js_executor.spec.js'
+        row_js: '../tests/suites/js_executor/js_executor.spec.js',
+        yandex_additional: '../tests/suites/yandex/yandex_additional.spec.js'
     },
     framework: 'jasmine',
     jasmineNodeOpts: {

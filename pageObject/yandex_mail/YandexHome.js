@@ -53,4 +53,13 @@ export class YandexHome {
         return await this.actualLanguageText.getText();
     }
 
+    async goToMarket() {
+        await helpers.waitElementVisible(this.homeTabsBlock);
+        await this.homeTabs.get(4).click();
+    }
+
+    async goToMusic() {
+        await helpers.waitElementVisible(this.homeTabsBlock);
+        await this.homeTabs.get(6).click();
+    }
 }

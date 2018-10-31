@@ -3,7 +3,7 @@ import {helpers} from '../../../helpers/helper_wait.js';
 import {YandexTest} from "../../../pageObject/yandex/YandexTest";
 
 
-describe('js executor testing', function () {
+describe('js executor testing', function() {
 
     browser.get(URL.yandex_ru);
 

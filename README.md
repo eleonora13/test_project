@@ -48,3 +48,9 @@
 2. Open the new tab in Terminal;
 3. Go to the config folder via the `cd config` command;
 4. Run the `protractor conf --suite row_js` command to run the _js_executor.spec_ script
+
+**To run the _yandex_additional.spec_ script you need:**
+1. First of all run the command: `webdriver-manager start`;
+2. Open the new tab in Terminal;
+3. Go to the config folder via the `cd config` command;
+4. Run the `protractor conf --suite yandex_additional` command to run the _yandex_additional.spec_ script
